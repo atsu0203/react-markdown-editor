@@ -1,5 +1,7 @@
-import * as React from 'react'
-import styled from 'styled-components'
+import * as React from "react";
+import styled from "styled-components";
+
+const { useState } = React
 
 const Header = styled.header`
   font-size: 1.5rem;
@@ -10,7 +12,7 @@ const Header = styled.header`
   position: fixed;
   right: 0;
   top: 0;
-`
+`;
 
 const Wrapper = styled.div`
   bottom: 0;
@@ -18,7 +20,7 @@ const Wrapper = styled.div`
   position: fixed;
   right: 0;
   top: 3rem;
-`
+`;
 
 const TextArea = styled.textarea`
   border-right: 1px solid silver;
@@ -30,7 +32,7 @@ const TextArea = styled.textarea`
   position: absolute;
   top: 0;
   width: 50vw;
-`
+`;
 
 const Preview = styled.div`
   border-top: 1px solid silver;
@@ -41,18 +43,22 @@ const Preview = styled.div`
   right: 0;
   top: 0;
   width: 50vw;
-`
+`;
 
 export const Editor: React.FC = () => {
+  const [text, setText] = useState<string>("");
   return (
     <>
-      <Header>
-        Markdown Editor
-      </Header>
+      <Header>Markdown Editor</Header>
       <Wrapper>
-        <TextArea value="テキスト入力エリア" />
+        <TextArea
+          onChange={(event) => {
+            setText(event.target.value);
+          }}
+          value={text}
+        />
         <Preview>プレビューエリア</Preview>
       </Wrapper>
     </>
-  )
-}
+  );
+};
