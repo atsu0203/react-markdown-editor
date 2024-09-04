@@ -78,8 +78,8 @@ export const Editor: React.FC<Props> = (props) => {
   return (
     <>
       <HeaderArea>
-        <Header title="Markdown Editor">
-          Markdown Editor
+        <Header title="Markdown Note">
+          Markdown Note
           <Button onClick={() => setShowModal(true)}>保存する</Button>
           <Link to="/history">履歴を見る</Link>
         </Header>
