@@ -7,7 +7,7 @@ const HeaderWrapper = styled.header`
   height: 2rem;
   justify-content: space-between;
   line-height: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 `
 
 const HeaderTitle = styled.div`
